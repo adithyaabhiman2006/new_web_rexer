@@ -35,20 +35,15 @@ export default function ContactPage() {
     setStatus(null)
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-
-      if (res.ok) {
-        setStatus({ type: 'success', message: 'Message sent successfully! We\'ll get back to you within 24 hours.' })
-        setForm({ name: '', email: '', service: '', message: '' })
-      } else {
-        setStatus({ type: 'error', message: 'Failed to send message. Please try again or email us directly.' })
+      if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        const { supabase } = await import('@/lib/supabase')
+        const { error } = await supabase.from('messages').insert([form])
+        if (error) throw error
       }
+      setStatus({ type: 'success', message: 'Message sent successfully! We\'ll get back to you within 24 hours.' })
+      setForm({ name: '', email: '', service: '', message: '' })
     } catch {
-      setStatus({ type: 'error', message: 'Network error. Please try again.' })
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again or email us directly at rexerlk@gmail.com.' })
     } finally {
       setLoading(false)
     }

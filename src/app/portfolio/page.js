@@ -63,11 +63,6 @@ const PROJECTS = [
   },
 ]
 
-export const metadata = {
-  title: 'Portfolio | Rexer Studio',
-  description: 'Explore our portfolio of secure mobile apps, penetration testing tools, and fintech dashboard designs.',
-}
-
 export default function PortfolioPage() {
   const [filter, setFilter] = useState('All')
 
