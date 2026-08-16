@@ -2,6 +2,8 @@ import './globals.css'
 import TelemetryBar from '@/components/ui/TelemetryBar'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CyberGridBackdrop from '@/components/ui/CyberGridBackdrop'
+import CyberDock from '@/components/ui/CyberDock'
 
 export const metadata = {
   title: 'REXER Studio | Institutional Cybersecurity & Fintech OS',
@@ -25,10 +27,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <CyberGridBackdrop />
         <TelemetryBar />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CyberDock />
       </body>
     </html>
   )

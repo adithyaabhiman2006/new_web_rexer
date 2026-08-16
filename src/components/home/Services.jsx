@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Smartphone, Target, LayoutDashboard, Lock, ShieldCheck, Zap, ArrowUpRight, CheckCircle2, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import SpotlightCard from '@/components/ui/SpotlightCard'
 
 const HIGH_TICKET_SERVICES = [
   {
@@ -20,6 +21,7 @@ const HIGH_TICKET_SERVICES = [
     tags: ['Flutter 3.24', 'Dart', 'Firebase', 'AES-256', 'SQLCipher'],
     highlight: '60K+ Developers Trained',
     color: 'var(--cyan-bright)',
+    spotlight: 'rgba(0, 240, 255, 0.18)',
     icon: Smartphone,
   },
   {
@@ -37,6 +39,7 @@ const HIGH_TICKET_SERVICES = [
     tags: ['OWASP Top 10', 'Burp Suite Pro', 'Frida', 'Kali Linux', 'CVSS v3.1'],
     highlight: '100% Remediation Rate',
     color: 'var(--crimson-alert)',
+    spotlight: 'rgba(255, 0, 85, 0.18)',
     icon: Target,
   },
   {
@@ -54,13 +57,12 @@ const HIGH_TICKET_SERVICES = [
     tags: ['Figma Master', 'Flutter Web', 'WebGL', 'Trading UX', 'Glassmorphism'],
     highlight: '$120M+ Volume Processed',
     color: 'var(--amber-gold)',
+    spotlight: 'rgba(255, 180, 0, 0.18)',
     icon: LayoutDashboard,
   },
 ]
 
 export default function Services() {
-  const [activeService, setActiveService] = useState('mobile-fintech')
-
   return (
     <section className="section" id="services">
       <div className="container">
@@ -83,95 +85,96 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
           {HIGH_TICKET_SERVICES.map((s, i) => {
             const Icon = s.icon
             return (
               <motion.div
                 key={s.id}
-                className="cyber-card"
-                style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column' }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 id={`service-${s.id}`}
+                style={{ height: '100%' }}
               >
-                <div className="bracket-corner bracket-tl" />
-                <div className="bracket-corner bracket-tr" />
-                <div className="bracket-corner bracket-bl" />
-                <div className="bracket-corner bracket-br" />
-
-                {/* Header */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  <div style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: 'var(--radius-sm)',
-                    background: 'var(--bg-tertiary)',
-                    border: `1px solid ${s.color}`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: s.color,
-                  }}>
-                    <Icon size={24} />
-                  </div>
-                  <span style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.7rem',
-                    color: s.color,
-                    padding: '3px 8px',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: '4px',
-                  }}>
-                    {s.highlight}
-                  </span>
-                </div>
-
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
-                  {s.num}
-                </div>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-pure)' }}>
-                  {s.title}
-                </h3>
-                <div style={{ fontSize: '0.85rem', color: s.color, fontWeight: 600, marginBottom: '1.2rem' }}>
-                  {s.subtitle}
-                </div>
-
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
-                  {s.desc}
-                </p>
-
-                {/* Capabilities list */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '2rem' }}>
-                  {s.capabilities.map((cap, idx) => (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: 'var(--text-primary)' }}>
-                      <CheckCircle2 size={15} style={{ color: s.color, flexShrink: 0, marginTop: '2px' }} />
-                      <span>{cap}</span>
+                <SpotlightCard
+                  spotlightColor={s.spotlight}
+                  tilt={true}
+                  maxTilt={6}
+                  style={{ padding: '2.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  {/* Header */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                    <div style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: 'var(--radius-sm)',
+                      background: 'var(--bg-tertiary)',
+                      border: `1px solid ${s.color}`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: s.color,
+                    }}>
+                      <Icon size={24} />
                     </div>
-                  ))}
-                </div>
-
-                {/* Tags */}
-                <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '0.4rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)' }}>
-                  {s.tags.map(t => (
-                    <span
-                      key={t}
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '0.7rem',
-                        padding: '3px 8px',
-                        borderRadius: '4px',
-                        background: 'var(--bg-tertiary)',
-                        color: 'var(--text-muted)',
-                      }}
-                    >
-                      {t}
+                    <span style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: s.color,
+                      padding: '3px 8px',
+                      background: 'rgba(255, 255, 255, 0.04)',
+                      border: '1px solid var(--border-subtle)',
+                      borderRadius: '4px',
+                    }}>
+                      {s.highlight}
                     </span>
-                  ))}
-                </div>
+                  </div>
+
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
+                    {s.num}
+                  </div>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-pure)' }}>
+                    {s.title}
+                  </h3>
+                  <div style={{ fontSize: '0.85rem', color: s.color, fontWeight: 600, marginBottom: '1.2rem' }}>
+                    {s.subtitle}
+                  </div>
+
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
+                    {s.desc}
+                  </p>
+
+                  {/* Capabilities list */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '2rem' }}>
+                    {s.capabilities.map((cap, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: 'var(--text-primary)' }}>
+                        <CheckCircle2 size={15} style={{ color: s.color, flexShrink: 0, marginTop: '2px' }} />
+                        <span>{cap}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tags */}
+                  <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '0.4rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)' }}>
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        style={{
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.7rem',
+                          padding: '3px 8px',
+                          borderRadius: '4px',
+                          background: 'var(--bg-tertiary)',
+                          color: 'var(--text-muted)',
+                        }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </SpotlightCard>
               </motion.div>
             )
           })}

@@ -837,3 +837,49 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ============================================================
+   SHINY TEXT & MARQUEE ANIMATIONS
+   ============================================================ */
+@keyframes shine {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Spotlight Card interactive hover styling */
+.spotlight-card:hover {
+  border-color: rgba(0, 240, 255, 0.38) !important;
+  box-shadow: 0 16px 40px -10px rgba(0, 240, 255, 0.18), 0 0 0 1px rgba(0, 240, 255, 0.15) !important;
+}
+
+/* Cyber Dock responsive positioning */
+@media (max-width: 640px) {
+  .cyber-dock-container {
+    bottom: 12px !important;
+    padding: 0.3rem 0.4rem !important;
+    gap: 0.2rem !important;
+  }
+}
+
+

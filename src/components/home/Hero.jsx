@@ -4,6 +4,9 @@ import { ArrowRight, ShieldCheck, Play, Sparkles, Terminal as TermIcon, External
 import Link from 'next/link'
 import CyberTerminal from '@/components/ui/CyberTerminal'
 import SplitFlapText from '@/components/ui/SplitFlapText'
+import DecryptedText from '@/components/ui/DecryptedText'
+import ShinyText from '@/components/ui/ShinyText'
+import MagneticButton from '@/components/ui/MagneticButton'
 
 export default function Hero() {
   return (
@@ -16,15 +19,26 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            {/* System Status Eyebrow */}
+            {/* System Status Eyebrow with DecryptedText */}
             <div className="section-eyebrow">
               <span className="telemetry-dot" />
-              <span>INSTITUTIONAL CYBERSECURITY & FINTECH OS</span>
+              <DecryptedText
+                text="INSTITUTIONAL CYBERSECURITY & FINTECH OS"
+                animateOn="view"
+                speed={30}
+              />
             </div>
 
-            {/* Kinetic Display Headline */}
+            {/* Kinetic Display Headline with ShinyText */}
             <h1 className="hero-headline">
-              Engineering <span className="text-gradient-cyan">Fortified</span> Digital Empires.
+              Engineering{' '}
+              <ShinyText
+                text="Fortified"
+                color="#00f0ff"
+                shimmerColor="#ffffff"
+                speed={4}
+              />{' '}
+              Digital Empires.
             </h1>
 
             {/* Live Mechanical Split-Flap Status Board */}
@@ -122,14 +136,18 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Action Row */}
+            {/* Magnetic Action Row */}
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-              <Link href="/contact" className="btn btn-primary btn-lg" id="hero-action-primary">
-                Commission Project <ArrowRight size={18} />
-              </Link>
-              <Link href="/portfolio" className="btn btn-outline btn-lg" id="hero-action-secondary">
-                <Play size={16} /> Live Showcases
-              </Link>
+              <MagneticButton>
+                <Link href="/contact" className="btn btn-primary btn-lg" id="hero-action-primary">
+                  Commission Project <ArrowRight size={18} />
+                </Link>
+              </MagneticButton>
+              <MagneticButton>
+                <Link href="/portfolio" className="btn btn-outline btn-lg" id="hero-action-secondary">
+                  <Play size={16} /> Live Showcases
+                </Link>
+              </MagneticButton>
             </div>
 
             {/* Authority stats ticker */}
