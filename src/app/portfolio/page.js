@@ -20,8 +20,8 @@ const PROJECTS = [
     tags: ['Flutter 3.24', 'Supabase RLS', 'Dart', 'AES-256', 'SQLCipher'],
     highlight: '$4.2M Tx Volume',
     icon: Code2,
-    spotlight: 'rgba(0, 240, 255, 0.18)',
-    gradient: 'linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(6, 182, 212, 0.04))',
+    spotlight: 'rgba(245, 158, 11, 0.18)',
+    gradient: 'linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(251, 191, 36, 0.04))',
   },
   {
     slug: 'apex-orderbook',
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Engineered <ShinyText text="Case Studies" color="#00f0ff" shimmerColor="#ffffff" speed={3.5} />
+            Engineered <ShinyText text="Case Studies" color="#F59E0B" shimmerColor="#ffffff" speed={3.5} />
           </motion.h1>
           <motion.p
             className="page-subtitle"
@@ -180,7 +180,7 @@ export default function PortfolioPage() {
                               height: '42px',
                               borderRadius: '10px',
                               background: 'rgba(4, 8, 18, 0.8)',
-                              border: '1px solid rgba(0, 240, 255, 0.25)',
+                              border: '1px solid rgba(245, 158, 11, 0.25)',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',

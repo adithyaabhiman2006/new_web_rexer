@@ -13,7 +13,7 @@ const CHANNELS = [
 
 export default function Footer() {
   return (
-    <footer id="site-footer" style={{ background: '#02040A', borderTop: '1px solid var(--border-medium)', position: 'relative', overflow: 'hidden' }}>
+    <footer id="site-footer" style={{ background: '#07080B', borderTop: '1px solid var(--border-medium)', position: 'relative', overflow: 'hidden' }}>
       {/* Aurora strip at top of footer */}
       <div
         style={{
@@ -22,7 +22,7 @@ export default function Footer() {
           left: 0,
           right: 0,
           height: '180px',
-          background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 240, 255, 0.08) 0%, rgba(147, 51, 234, 0.05) 40%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245, 158, 11, 0.1) 0%, rgba(139, 92, 246, 0.06) 40%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -174,9 +174,11 @@ export default function Footer() {
             © {new Date().getFullYear()} REXER STUDIO. ALL RIGHTS RESERVED.
           </div>
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <span>AUTONOMOUS ENGINE: CLAUDE 4.6</span>
+            <span>AUTONOMOUS ENGINE: CLAUDE OPUS 4.6</span>
             <span>REVIEW: CODERABBIT AI</span>
-            <span>HOSTING: GITHUB PAGES</span>
+            <span>BACKEND: SUPABASE</span>
+            <span>SETTLEMENT: STRIPE</span>
+            <span>HOSTING: GITHUB PAGES / VERCEL</span>
           </div>
         </div>
       </div>

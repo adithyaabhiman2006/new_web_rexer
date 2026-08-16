@@ -1,7 +1,7 @@
 'use client'
 import { useCallback, useEffect, useRef } from 'react'
 
-export default function ClickSpark({ children, sparkColor = '#00F0FF', sparkCount = 10 }) {
+export default function ClickSpark({ children, sparkColor = '#F59E0B', sparkCount = 10 }) {
   const canvasRef = useRef(null)
   const sparksRef = useRef([])
   const frameRef = useRef(null)
@@ -59,7 +59,7 @@ export default function ClickSpark({ children, sparkColor = '#00F0FF', sparkCoun
         ctx.globalAlpha = s.life * 0.9
         ctx.fillStyle = sparkColor
         ctx.shadowColor = sparkColor
-        ctx.shadowBlur = 6 * s.life
+        ctx.shadowBlur = 8 * s.life
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.size * s.life, 0, Math.PI * 2)
         ctx.fill()

@@ -37,7 +37,7 @@ export default function CTA() {
             <br />
             <ShinyText
               text="Secure Digital Empire?"
-              color="#00f0ff"
+              color="#F59E0B"
               shimmerColor="#ffffff"
               speed={3.5}
             />

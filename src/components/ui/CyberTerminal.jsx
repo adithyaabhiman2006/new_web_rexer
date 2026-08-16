@@ -139,8 +139,8 @@ export default function CyberTerminal() {
           cycleDelay={3200}
           flipDuration={0.08}
           stagger={0.03}
-          tileColor="#050c1a"
-          textColor="#00f0ff"
+          tileColor="#11141C"
+          textColor="#FBBF24"
           padTo={26}
         />
       </div>

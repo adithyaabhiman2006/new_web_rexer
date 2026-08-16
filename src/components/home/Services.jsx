@@ -23,7 +23,7 @@ const HIGH_TICKET_SERVICES = [
     tags: ['Flutter 3.24', 'Dart', 'Firebase', 'AES-256', 'SQLCipher'],
     highlight: '60K+ Developers Trained',
     color: 'var(--cyan-bright)',
-    spotlight: 'rgba(0, 240, 255, 0.18)',
+    spotlight: 'rgba(245, 158, 11, 0.18)',
     icon: Smartphone,
   },
   {

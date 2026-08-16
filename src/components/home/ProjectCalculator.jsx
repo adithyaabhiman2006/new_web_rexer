@@ -104,7 +104,7 @@ export default function ProjectCalculator() {
                       justifyContent: 'space-between',
                       padding: '0.9rem 1.2rem',
                       borderRadius: 'var(--radius-sm)',
-                      background: platform === p.id ? 'rgba(0, 240, 255, 0.12)' : 'var(--bg-tertiary)',
+                      background: platform === p.id ? 'rgba(245, 158, 11, 0.14)' : 'var(--bg-tertiary)',
                       border: `1px solid ${platform === p.id ? 'var(--cyan-bright)' : 'var(--border-subtle)'}`,
                       color: 'var(--text-pure)',
                       cursor: 'pointer',

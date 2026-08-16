@@ -1,57 +1,54 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import {
-  Shield,
-  Terminal,
-  Layers,
-  Calculator,
-  Crown,
-  Send,
+import { motion, AnimatePresence } from 'framer-motion'
+import { 
+  Home, 
+  Layers, 
+  ShieldCheck, 
+  Terminal, 
+  Send, 
+  ArrowUp,
   Volume2,
   VolumeX,
-  FileCode2,
-  Sparkles,
-  ArrowUp,
+  Sparkles
 } from 'lucide-react'
-import { soundFx } from './soundEffects'
+import { soundFx } from '@/components/ui/soundEffects'
 
 const DOCK_ITEMS = [
-  { href: '/#hero', label: 'Kernel', icon: Shield, shortcut: '1' },
-  { href: '/#protocols', label: 'Protocols', icon: Layers, shortcut: '2' },
-  { href: '/#live-scanner', label: 'Scanner', icon: Terminal, shortcut: '3' },
-  { href: '/portfolio', label: 'Case Studies', icon: FileCode2, shortcut: '4' },
-  { href: '/#calculator', label: 'Estimator', icon: Calculator, shortcut: '5' },
-  { href: '/pricing', label: 'Investment', icon: Crown, shortcut: '6' },
-  { href: '/contact', label: 'Commence', icon: Send, shortcut: '7' },
+  { href: '/', label: 'System OS', icon: Home },
+  { href: '/portfolio', label: 'Case Studies', icon: Layers },
+  { href: '/pricing', label: 'Investment', icon: ShieldCheck },
+  { href: '/blog', label: 'Threat Intel', icon: Terminal },
+  { href: '/contact', label: 'Commence', icon: Send },
 ]
 
 export default function CyberDock() {
-  const [isMuted, setIsMuted] = useState(false)
   const [hoveredIdx, setHoveredIdx] = useState(null)
-  const [showScrollTop, setShowScrollTop] = useState(false)
+  const [isMuted, setIsMuted] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    setMounted(true)
+    setIsMuted(soundFx.muted)
   }, [])
 
   const toggleAudio = () => {
-    const nextState = soundFx.toggleMute()
-    setIsMuted(nextState)
-    if (!nextState) soundFx.playSuccess()
+    const newState = soundFx.toggleMute()
+    setIsMuted(newState)
+    if (!newState) {
+      soundFx.playPowerUp()
+    }
   }
 
   const scrollToTop = () => {
     soundFx.playClick()
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  if (!mounted) return null
 
   return (
     <div
@@ -66,12 +63,12 @@ export default function CyberDock() {
         alignItems: 'center',
         gap: '0.4rem',
         padding: '0.4rem 0.6rem',
-        background: 'rgba(6, 12, 26, 0.85)',
-        border: '1px solid rgba(0, 240, 255, 0.25)',
+        background: 'rgba(17, 20, 28, 0.85)',
+        border: '1px solid rgba(245, 158, 11, 0.25)',
         borderRadius: '20px',
-        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(0, 240, 255, 0.25)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
+        boxShadow: '0 16px 40px rgba(0, 0, 0, 0.65), 0 0 25px -5px rgba(245, 158, 11, 0.2)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
       }}
     >
       {DOCK_ITEMS.map((item, idx) => {
@@ -103,12 +100,12 @@ export default function CyberDock() {
               borderRadius: '12px',
               color: active ? 'var(--cyan-bright)' : 'var(--text-secondary)',
               background: active
-                ? 'rgba(0, 240, 255, 0.15)'
+                ? 'rgba(245, 158, 11, 0.15)'
                 : isHovered
                 ? 'rgba(255, 255, 255, 0.08)'
                 : 'transparent',
               border: active
-                ? '1px solid rgba(0, 240, 255, 0.3)'
+                ? '1px solid rgba(245, 158, 11, 0.35)'
                 : '1px solid transparent',
               textDecoration: 'none',
               transform: `scale(${scale})`,
@@ -130,17 +127,17 @@ export default function CyberDock() {
                   style={{
                     position: 'absolute',
                     top: 0,
-                    padding: '0.2rem 0.5rem',
+                    padding: '0.2rem 0.55rem',
                     borderRadius: '6px',
-                    background: '#040814',
-                    border: '1px solid rgba(0, 240, 255, 0.3)',
+                    background: '#0B0D12',
+                    border: '1px solid rgba(245, 158, 11, 0.3)',
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.65rem',
                     fontWeight: 700,
                     color: 'var(--cyan-bright)',
                     whiteSpace: 'nowrap',
                     pointerEvents: 'none',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.6)',
                   }}
                 >
                   {item.label}
@@ -155,7 +152,7 @@ export default function CyberDock() {
         style={{
           width: '1px',
           height: '24px',
-          background: 'rgba(59, 130, 246, 0.2)',
+          background: 'rgba(255, 255, 255, 0.12)',
           margin: '0 0.2rem',
         }}
       />
@@ -169,8 +166,8 @@ export default function CyberDock() {
           width: '36px',
           height: '36px',
           borderRadius: '10px',
-          border: '1px solid rgba(59, 130, 246, 0.2)',
-          background: isMuted ? 'rgba(255, 68, 68, 0.1)' : 'rgba(0, 240, 255, 0.08)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          background: isMuted ? 'rgba(244, 63, 94, 0.12)' : 'rgba(245, 158, 11, 0.08)',
           color: isMuted ? 'var(--crimson-alert)' : 'var(--cyan-bright)',
           display: 'flex',
           alignItems: 'center',
@@ -178,37 +175,39 @@ export default function CyberDock() {
           cursor: 'pointer',
           transition: 'all 0.2s ease',
         }}
-        className="hover:scale-110 active:scale-95"
-        id="dock-audio-toggle"
       >
-        {isMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+        {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
       </button>
 
-      {/* Scroll to top button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          aria-label="Scroll to top"
-          title="Return to top"
-          style={{
-            width: '36px',
-            height: '36px',
-            borderRadius: '10px',
-            border: '1px solid rgba(0, 255, 136, 0.3)',
-            background: 'rgba(0, 255, 136, 0.1)',
-            color: 'var(--emerald-neon)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-          }}
-          className="hover:scale-110 active:scale-95"
-          id="dock-scroll-top"
-        >
-          <ArrowUp size={15} />
-        </button>
-      )}
+      {/* Scroll to Top */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        title="Scroll to Top"
+        style={{
+          width: '36px',
+          height: '36px',
+          borderRadius: '10px',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          background: 'rgba(255, 255, 255, 0.04)',
+          color: 'var(--text-secondary)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = 'var(--cyan-bright)'
+          e.currentTarget.style.borderColor = 'var(--cyan-bright)'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = 'var(--text-secondary)'
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
+        }}
+      >
+        <ArrowUp size={16} />
+      </button>
     </div>
   )
 }

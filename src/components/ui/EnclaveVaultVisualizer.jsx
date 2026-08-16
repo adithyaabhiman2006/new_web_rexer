@@ -118,9 +118,9 @@ export default function EnclaveVaultVisualizer() {
             fontSize: '0.7rem',
             padding: '0.2rem 0.5rem',
             borderRadius: '4px',
-            background: 'rgba(0, 240, 255, 0.1)',
+            background: 'rgba(245, 158, 11, 0.1)',
             color: 'var(--cyan-bright)',
-            border: '1px solid rgba(0, 240, 255, 0.25)',
+            border: '1px solid rgba(245, 158, 11, 0.25)',
           }}
         >
           5-LAYER HARDENING
@@ -260,10 +260,10 @@ export default function EnclaveVaultVisualizer() {
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.75rem',
                 color: 'var(--cyan-bright)',
-                background: 'rgba(0, 240, 255, 0.06)',
+                background: 'rgba(245, 158, 11, 0.08)',
                 padding: '0.4rem 0.75rem',
                 borderRadius: '6px',
-                border: '1px solid rgba(0, 240, 255, 0.15)',
+                border: '1px solid rgba(245, 158, 11, 0.2)',
               }}
             >
               TECH: {active.tech}

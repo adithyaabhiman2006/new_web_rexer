@@ -3,7 +3,7 @@
 export default function StarBorder({
   children,
   className = '',
-  color = '#00F0FF',
+  color = '#F59E0B',
   speed = '6s',
   radius = 'var(--radius-md)',
   style = {},
@@ -27,7 +27,7 @@ export default function StarBorder({
           borderRadius: radius,
           background: `conic-gradient(from 0deg at 50% 50%, transparent 0deg, ${color} 60deg, transparent 120deg, transparent 360deg)`,
           animation: `star-rotate ${speed} linear infinite`,
-          opacity: 0.7,
+          opacity: 0.75,
         }}
       />
       {/* Static subtle border fallback */}
@@ -44,7 +44,7 @@ export default function StarBorder({
         style={{
           position: 'relative',
           borderRadius: `calc(${radius} - 1px)`,
-          background: 'var(--bg-secondary, #080E1A)',
+          background: 'var(--bg-secondary, #11141C)',
           zIndex: 1,
         }}
       >

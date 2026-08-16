@@ -12,7 +12,7 @@ const TESTIMONIALS = [
     name: 'Sarah Chen',
     role: 'CTO, FinVault Inc.',
     initials: 'SC',
-    accent: '#00F0FF',
+    accent: '#F59E0B',
   },
   {
     id: 't2',
@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     name: 'Marcus Rivera',
     role: 'Security Lead, BlockSecure',
     initials: 'MR',
-    accent: '#9333EA',
+    accent: '#8B5CF6',
   },
   {
     id: 't3',
@@ -28,7 +28,7 @@ const TESTIMONIALS = [
     name: 'Akira Tanaka',
     role: 'Product Manager, TradeAxis',
     initials: 'AT',
-    accent: '#00FF88',
+    accent: '#10B981',
   },
   {
     id: 't4',

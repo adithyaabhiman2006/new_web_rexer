@@ -1,15 +1,13 @@
 'use client'
-import React from 'react'
 
 export default function ShinyText({
-  text,
+  text = '',
   disabled = false,
-  speed = 5,
+  speed = 4,
   className = '',
-  color = '#00f0ff',
-  shimmerColor = '#ffffff',
+  color = '#F59E0B',
+  shimmerColor = '#FFFFFF',
   style = {},
-  ...props
 }) {
   const animationDuration = `${speed}s`
 
@@ -17,16 +15,15 @@ export default function ShinyText({
     <span
       className={`shiny-text ${disabled ? 'disabled' : ''} ${className}`}
       style={{
-        display: 'inline-block',
-        backgroundImage: `linear-gradient(120deg, ${color} 0%, ${color} 35%, ${shimmerColor} 50%, ${color} 65%, ${color} 100%)`,
+        backgroundImage: `linear-gradient(120deg, ${color} 0%, ${color} 40%, ${shimmerColor} 50%, ${color} 60%, ${color} 100%)`,
         backgroundSize: '200% 100%',
         WebkitBackgroundClip: 'text',
         backgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         animation: disabled ? 'none' : `shine ${animationDuration} linear infinite`,
+        display: 'inline-block',
         ...style,
       }}
-      {...props}
     >
       {text}
     </span>

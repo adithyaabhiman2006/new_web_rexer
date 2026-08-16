@@ -37,7 +37,7 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Threat <ShinyText text="Intel Journal" color="#00f0ff" shimmerColor="#ffffff" speed={3.5} />
+            Threat <ShinyText text="Intel Journal" color="#F59E0B" shimmerColor="#ffffff" speed={3.5} />
           </motion.h1>
           <motion.p
             className="page-subtitle"
@@ -87,7 +87,7 @@ export default function BlogPage() {
               >
                 <Link href={`/blog/${post.slug}`} style={{ display: 'block', textDecoration: 'none', height: '100%' }}>
                   <SpotlightCard
-                    spotlightColor="rgba(0, 240, 255, 0.16)"
+                    spotlightColor="rgba(245, 158, 11, 0.16)"
                     tilt={true}
                     maxTilt={6}
                     style={{ padding: '2rem', height: '100%', display: 'flex', flexDirection: 'column' }}
@@ -99,8 +99,8 @@ export default function BlogPage() {
                           fontFamily: 'var(--font-mono)',
                           fontSize: '0.68rem',
                           color: 'var(--cyan-bright)',
-                          background: 'rgba(0, 240, 255, 0.1)',
-                          border: '1px solid rgba(0, 240, 255, 0.25)',
+                          background: 'rgba(245, 158, 11, 0.1)',
+                          border: '1px solid rgba(245, 158, 11, 0.25)',
                           padding: '0.2rem 0.6rem',
                           borderRadius: '4px',
                           textTransform: 'uppercase',

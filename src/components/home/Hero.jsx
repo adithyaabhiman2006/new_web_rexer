@@ -42,7 +42,7 @@ export default function Hero() {
                 maxWeight={900}
                 radius={250}
                 style={{
-                  background: 'linear-gradient(135deg, #00F0FF, #3B82F6, #9333EA)',
+                  background: 'linear-gradient(135deg, #FBBF24 0%, #F59E0B 40%, #8B5CF6 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -56,10 +56,10 @@ export default function Hero() {
               style={{
                 margin: '1.25rem 0 1.5rem 0',
                 padding: '0.75rem 1.15rem',
-                background: 'rgba(4, 10, 22, 0.85)',
-                border: '1px solid rgba(0, 240, 255, 0.22)',
+                background: 'rgba(17, 20, 28, 0.9)',
+                border: '1px solid rgba(245, 158, 11, 0.25)',
                 borderRadius: '12px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.05)',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(245, 158, 11, 0.05)',
                 display: 'inline-flex',
                 flexDirection: 'column',
                 gap: '0.45rem',
@@ -116,8 +116,8 @@ export default function Hero() {
                   cycleDelay={2400}
                   flipDuration={0.09}
                   stagger={0.04}
-                  tileColor="#0a1428"
-                  textColor="#00f0ff"
+                  tileColor="#11141C"
+                  textColor="#FBBF24"
                   padTo={12}
                 />
               </div>
@@ -210,7 +210,7 @@ export default function Hero() {
                 right: '-30px',
                 width: '160px',
                 height: '160px',
-                background: 'conic-gradient(from 180deg, rgba(0, 240, 255, 0.15), rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.15), rgba(0, 240, 255, 0.15))',
+                background: 'conic-gradient(from 180deg, rgba(245, 158, 11, 0.18), rgba(139, 92, 246, 0.15), rgba(251, 191, 36, 0.18), rgba(245, 158, 11, 0.18))',
                 borderRadius: '50%',
                 filter: 'blur(40px)',
                 animation: 'float-shield 6s ease-in-out infinite',

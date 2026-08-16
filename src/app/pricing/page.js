@@ -115,12 +115,12 @@ export default function PricingPage() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-md)',
-                    background: plan.featured ? 'var(--gradient-blue)' : 'var(--clr-blue-dim)',
+                    background: plan.featured ? 'var(--grad-cyan-blue)' : 'var(--cyan-dim)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    margin: '0 auto var(--space-lg)',
-                    color: plan.featured ? 'white' : 'var(--clr-blue)',
+                    margin: '0 auto var(--space-lg, 1.5rem)',
+                    color: plan.featured ? '#07080B' : 'var(--cyan-bright)',
                   }}>
                     <Icon size={22} />
                   </div>

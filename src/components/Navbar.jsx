@@ -39,11 +39,11 @@ export default function Navbar() {
           backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(12px)',
           WebkitBackdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(12px)',
           background: scrolled
-            ? 'rgba(4, 8, 16, 0.78)'
-            : 'rgba(4, 8, 16, 0.45)',
+            ? 'rgba(11, 13, 18, 0.88)'
+            : 'rgba(11, 13, 18, 0.55)',
           borderBottom: scrolled
-            ? '1px solid rgba(0, 240, 255, 0.12)'
-            : '1px solid rgba(59, 130, 246, 0.08)',
+            ? '1px solid rgba(245, 158, 11, 0.18)'
+            : '1px solid rgba(255, 255, 255, 0.08)',
           transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
@@ -115,14 +115,15 @@ export default function Navbar() {
           {/* Right Action — StarBorder CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <div className="nav-cta-desktop">
-              <StarBorder color="#00F0FF" speed="4s" radius="var(--radius-full)">
+              <StarBorder color="#F59E0B" speed="4s" radius="var(--radius-full)">
                 <Link
                   href="/contact"
                   className="btn btn-primary btn-sm"
                   style={{
-                    background: 'rgba(0, 240, 255, 0.08)',
+                    background: 'rgba(245, 158, 11, 0.1)',
                     border: 'none',
                     padding: '0.45rem 1.2rem',
+                    color: '#FFFFFF',
                   }}
                   id="nav-cta-btn"
                 >
@@ -165,10 +166,10 @@ export default function Navbar() {
               top: 'calc(var(--nav-height) + var(--telemetry-height))',
               left: 0,
               right: 0,
-              background: 'rgba(4, 8, 16, 0.95)',
+              background: 'rgba(11, 13, 18, 0.96)',
               backdropFilter: 'blur(24px)',
               WebkitBackdropFilter: 'blur(24px)',
-              borderBottom: '1px solid rgba(0, 240, 255, 0.12)',
+              borderBottom: '1px solid rgba(245, 158, 11, 0.18)',
               padding: '2rem 1.5rem',
               zIndex: 499,
               display: 'flex',
@@ -198,15 +199,16 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <StarBorder color="#00F0FF" speed="4s" radius="var(--radius-md)">
+              <StarBorder color="#F59E0B" speed="4s" radius="var(--radius-md)">
                 <Link
                   href="/contact"
                   className="btn btn-primary btn-lg"
                   style={{
                     width: '100%',
                     marginTop: '0.5rem',
-                    background: 'rgba(0, 240, 255, 0.08)',
+                    background: 'rgba(245, 158, 11, 0.1)',
                     border: 'none',
+                    color: '#FFFFFF',
                   }}
                   onClick={() => setMobileOpen(false)}
                 >

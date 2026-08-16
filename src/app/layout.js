@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <ClickSpark sparkColor="#00F0FF" sparkCount={8}>
+        <ClickSpark sparkColor="#F59E0B" sparkCount={8}>
           <CyberGridBackdrop />
           <TelemetryBar />
           <Navbar />

@@ -44,10 +44,10 @@ export default function CyberGridBackdrop() {
       constructor() {
         this.x = Math.random() * width
         this.y = Math.random() * height
-        this.vx = (Math.random() - 0.5) * 0.4
-        this.vy = (Math.random() - 0.5) * 0.4
+        this.vx = (Math.random() - 0.5) * 0.35
+        this.vy = (Math.random() - 0.5) * 0.35
         this.radius = Math.random() * 1.5 + 1
-        this.baseColor = Math.random() > 0.3 ? 'rgba(0, 240, 255, ' : 'rgba(0, 255, 136, '
+        this.baseColor = Math.random() > 0.4 ? 'rgba(245, 158, 11, ' : 'rgba(139, 92, 246, '
         this.alpha = Math.random() * 0.4 + 0.2
       }
 
@@ -60,7 +60,7 @@ export default function CyberGridBackdrop() {
         if (this.y < 0) this.y = height
         if (this.y > height) this.y = 0
 
-        // Mouse interaction (magnetic repulsion / pull)
+        // Mouse interaction
         const dx = mouse.x - this.x
         const dy = mouse.y - this.y
         const dist = Math.sqrt(dx * dx + dy * dy)
@@ -91,11 +91,6 @@ export default function CyberGridBackdrop() {
     const render = () => {
       ctx.clearRect(0, 0, width, height)
 
-      // Draw faint geometric grid background
-      const gridSize = 64
-      ctx.strokeStyle = 'rgba(59, 130, 246, 0.025)'
-      ctx.lineWidth = 1
-
       // Render nodes & connecting constellation lines
       for (let i = 0; i < nodes.length; i++) {
         nodes[i].update()
@@ -111,7 +106,7 @@ export default function CyberGridBackdrop() {
             ctx.beginPath()
             ctx.moveTo(nodes[i].x, nodes[i].y)
             ctx.lineTo(nodes[j].x, nodes[j].y)
-            ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`
+            ctx.strokeStyle = `rgba(245, 158, 11, ${alpha})`
             ctx.lineWidth = 0.8
             ctx.stroke()
           }
@@ -126,7 +121,7 @@ export default function CyberGridBackdrop() {
           ctx.beginPath()
           ctx.moveTo(nodes[i].x, nodes[i].y)
           ctx.lineTo(mouse.x, mouse.y)
-          ctx.strokeStyle = `rgba(0, 255, 136, ${malpha})`
+          ctx.strokeStyle = `rgba(251, 191, 36, ${malpha})`
           ctx.lineWidth = 1
           ctx.stroke()
         }

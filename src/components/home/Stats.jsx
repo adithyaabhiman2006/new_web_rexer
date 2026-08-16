@@ -6,10 +6,10 @@ import AuroraBackground from '@/components/ui/AuroraBackground'
 import LetterPullup from '@/components/ui/LetterPullup'
 
 const STATS = [
-  { end: 60, suffix: 'K+', label: 'YouTube Subscribers', color: '#3B82F6' },
-  { end: 50, suffix: '+', label: 'Projects Delivered', color: '#FFB800' },
-  { end: 12, suffix: '+', label: 'Certifications', color: '#00F0FF' },
-  { end: 5, suffix: '+', label: 'Years Experience', color: '#00FF88' },
+  { end: 60, suffix: 'K+', label: 'YouTube Subscribers', color: '#F59E0B' },
+  { end: 50, suffix: '+', label: 'Projects Delivered', color: '#8B5CF6' },
+  { end: 12, suffix: '+', label: 'Certifications', color: '#FBBF24' },
+  { end: 5, suffix: '+', label: 'Years Experience', color: '#10B981' },
 ]
 
 export default function Stats() {

@@ -167,7 +167,7 @@ export default function ArchitectureShowcase() {
           transform: 'translate(-50%, -50%)',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, rgba(59, 130, 246, 0.02) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(139, 92, 246, 0.04) 50%, transparent 70%)',
           pointerEvents: 'none',
           zIndex: 0,
         }}
@@ -227,13 +227,13 @@ export default function ArchitectureShowcase() {
                   fontWeight: 600,
                   border: isSelected
                     ? '1px solid var(--cyan-bright)'
-                    : '1px solid rgba(59, 130, 246, 0.15)',
+                    : '1px solid rgba(255, 255, 255, 0.1)',
                   background: isSelected
-                    ? 'linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)'
-                    : 'rgba(8, 16, 32, 0.6)',
+                    ? 'linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(139, 92, 246, 0.12) 100%)'
+                    : 'rgba(17, 20, 28, 0.7)',
                   color: isSelected ? 'var(--cyan-bright)' : 'var(--text-secondary)',
                   cursor: 'pointer',
-                  boxShadow: isSelected ? '0 0 20px -4px rgba(0, 240, 255, 0.3)' : 'none',
+                  boxShadow: isSelected ? '0 0 20px -4px rgba(245, 158, 11, 0.35)' : 'none',
                   transition: 'all 0.25s ease',
                 }}
                 className="hover:scale-105 active:scale-95"
@@ -320,9 +320,9 @@ export default function ArchitectureShowcase() {
             <div
               style={{
                 padding: '0.65rem 0.95rem',
-                background: 'rgba(2, 6, 14, 0.85)',
+                background: 'rgba(11, 13, 18, 0.9)',
                 borderRadius: '8px',
-                border: '1px solid rgba(0, 240, 255, 0.15)',
+                border: '1px solid rgba(245, 158, 11, 0.2)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '0.35rem',
@@ -356,8 +356,8 @@ export default function ArchitectureShowcase() {
                 cycleDelay={2600}
                 flipDuration={0.08}
                 stagger={0.035}
-                tileColor="#050d1c"
-                textColor="#00f0ff"
+                tileColor="#11141C"
+                textColor="#FBBF24"
                 padTo={17}
               />
             </div>

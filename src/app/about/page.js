@@ -55,7 +55,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Behind <ShinyText text="Rexer Studio" color="#00f0ff" shimmerColor="#ffffff" speed={3.5} />
+            Behind <ShinyText text="Rexer Studio" color="#F59E0B" shimmerColor="#ffffff" speed={3.5} />
           </motion.h1>
           <motion.p
             className="page-subtitle"
@@ -185,7 +185,7 @@ export default function AboutPage() {
                 transition={{ delay: i * 0.04, duration: 0.35 }}
               >
                 <SpotlightCard
-                  spotlightColor="rgba(0, 240, 255, 0.12)"
+                  spotlightColor="rgba(245, 158, 11, 0.12)"
                   style={{
                     padding: '1.25rem 1rem',
                     display: 'flex',
@@ -231,7 +231,7 @@ export default function AboutPage() {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
               >
                 <SpotlightCard
-                  spotlightColor="rgba(0, 240, 255, 0.15)"
+                  spotlightColor="rgba(245, 158, 11, 0.15)"
                   tilt={true}
                   maxTilt={6}
                   style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem' }}

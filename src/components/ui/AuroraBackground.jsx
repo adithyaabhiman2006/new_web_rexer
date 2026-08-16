@@ -5,7 +5,7 @@ export default function AuroraBackground({ children, className = '', style = {} 
   const containerRef = useRef(null)
 
   useEffect(() => {
-    // Slow organic motion via CSS custom properties
+    // Organic harmonic motion via CSS custom properties
     let frame
     let t = 0
     const animate = () => {
@@ -34,7 +34,7 @@ export default function AuroraBackground({ children, className = '', style = {} 
         ...style,
       }}
     >
-      {/* Blob 1 — Cyan */}
+      {/* Blob 1 — Amber Gold */}
       <div
         className="aurora-blob"
         style={{
@@ -44,13 +44,13 @@ export default function AuroraBackground({ children, className = '', style = {} 
           left: 'var(--aurora-x1, 50%)',
           top: 'var(--aurora-y1, 30%)',
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(0, 240, 255, 0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, transparent 70%)',
           filter: 'blur(80px)',
           mixBlendMode: 'screen',
           pointerEvents: 'none',
         }}
       />
-      {/* Blob 2 — Purple */}
+      {/* Blob 2 — Electric Violet */}
       <div
         className="aurora-blob"
         style={{
@@ -60,13 +60,13 @@ export default function AuroraBackground({ children, className = '', style = {} 
           left: 'var(--aurora-x2, 50%)',
           top: 'var(--aurora-y2, 60%)',
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%)',
           filter: 'blur(90px)',
           mixBlendMode: 'screen',
           pointerEvents: 'none',
         }}
       />
-      {/* Blob 3 — Blue */}
+      {/* Blob 3 — Luminescent Sage */}
       <div
         className="aurora-blob"
         style={{
@@ -76,7 +76,7 @@ export default function AuroraBackground({ children, className = '', style = {} 
           left: 'var(--aurora-x3, 40%)',
           top: 'var(--aurora-y3, 50%)',
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.14) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%)',
           filter: 'blur(70px)',
           mixBlendMode: 'screen',
           pointerEvents: 'none',

@@ -114,7 +114,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Commence <ShinyText text="Project" color="#00f0ff" shimmerColor="#ffffff" speed={3.5} />
+            Commence <ShinyText text="Project" color="#F59E0B" shimmerColor="#ffffff" speed={3.5} />
           </motion.h1>
           <motion.p
             className="page-subtitle"
@@ -162,8 +162,8 @@ export default function ContactPage() {
                           width: '40px',
                           height: '40px',
                           borderRadius: '10px',
-                          background: 'rgba(0, 240, 255, 0.08)',
-                          border: '1px solid rgba(0, 240, 255, 0.2)',
+                          background: 'rgba(245, 158, 11, 0.08)',
+                          border: '1px solid rgba(245, 158, 11, 0.2)',
                           color: 'var(--cyan-bright)',
                           display: 'flex',
                           alignItems: 'center',
@@ -246,9 +246,9 @@ export default function ContactPage() {
                       fontSize: '0.65rem',
                       padding: '0.15rem 0.45rem',
                       borderRadius: '4px',
-                      background: 'rgba(0, 240, 255, 0.1)',
+                      background: 'rgba(245, 158, 11, 0.1)',
                       color: 'var(--cyan-bright)',
-                      border: '1px solid rgba(0, 240, 255, 0.25)',
+                      border: '1px solid rgba(245, 158, 11, 0.25)',
                     }}
                   >
                     ECDSA SECP256K1
@@ -330,7 +330,7 @@ export default function ContactPage() {
                                 ? '1px solid var(--cyan-bright)'
                                 : '1px solid rgba(59, 130, 246, 0.15)',
                               background: isSelected
-                                ? 'rgba(0, 240, 255, 0.15)'
+                                ? 'rgba(245, 158, 11, 0.15)'
                                 : 'rgba(4, 8, 16, 0.6)',
                               color: isSelected ? 'var(--cyan-bright)' : 'var(--text-secondary)',
                               cursor: 'pointer',

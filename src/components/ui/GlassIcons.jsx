@@ -41,11 +41,11 @@ export function BookOpenGlass({ size = 24, className = '' }) {
         />
         <defs>
           <linearGradient id={gradA} x1="12" x2="12" y1="7" y2="22" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#00F0FF" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#081428" />
+            <stop stopColor="#F59E0B" stopOpacity="0.8" />
+            <stop offset="1" stopColor="#11141C" />
           </linearGradient>
           <linearGradient id={gradE} x1="21" x2="3" y1="10.5" y2="10.5" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#00F0FF" stopOpacity="0.7" />
+            <stop stopColor="#F59E0B" stopOpacity="0.7" />
             <stop offset="1" stopColor="#3B82F6" stopOpacity="0.4" />
           </linearGradient>
           <linearGradient id={gradF} x1="12" x2="12" y1="2.52" y2="12.05" gradientUnits="userSpaceOnUse">
@@ -180,7 +180,7 @@ export function CalendarGlass({ size = 24, className = '' }) {
           </linearGradient>
           <linearGradient id={gradE} x1="12" x2="12" y1="7" y2="22" gradientUnits="userSpaceOnUse">
             <stop stopColor="#00FF88" stopOpacity="0.6" />
-            <stop offset="1" stopColor="#00F0FF" stopOpacity="0.4" />
+            <stop offset="1" stopColor="#F59E0B" stopOpacity="0.4" />
           </linearGradient>
           <linearGradient id={gradF} x1="12" x2="12" y1="7" y2="15.687" gradientUnits="userSpaceOnUse">
             <stop stopColor="#fff" />
@@ -250,12 +250,12 @@ export function CartGlass({ size = 24, className = '' }) {
             <stop offset="1" stopColor="#250B45" />
           </linearGradient>
           <linearGradient id={gradE} x1="5" x2="5" y1="19" y2="23" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#00F0FF" />
-            <stop offset="1" stopColor="#081428" />
+            <stop stopColor="#F59E0B" />
+            <stop offset="1" stopColor="#11141C" />
           </linearGradient>
           <linearGradient id={gradF} x1="19" x2="19" y1="19" y2="23" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#00F0FF" />
-            <stop offset="1" stopColor="#081428" />
+            <stop stopColor="#F59E0B" />
+            <stop offset="1" stopColor="#11141C" />
           </linearGradient>
           <linearGradient id={gradG} x1="10.992" x2="10.992" y1="1" y2="17" gradientUnits="userSpaceOnUse">
             <stop stopColor="#C084FC" stopOpacity="0.7" />
@@ -326,7 +326,7 @@ export function CodeEditorGlass({ size = 24, className = '' }) {
           </linearGradient>
           <linearGradient id={gradE} x1="14" x2="14" y1="3" y2="21" gradientUnits="userSpaceOnUse">
             <stop stopColor="#60A5FA" stopOpacity="0.7" />
-            <stop offset="1" stopColor="#00F0FF" stopOpacity="0.4" />
+            <stop offset="1" stopColor="#F59E0B" stopOpacity="0.4" />
           </linearGradient>
           <linearGradient id={gradF} x1="14" x2="14" y1="3" y2="13.424" gradientUnits="userSpaceOnUse">
             <stop stopColor="#fff" />
@@ -390,11 +390,11 @@ export function WalletGlass({ size = 24, className = '' }) {
         <path fill={`url(#${gradG})`} d="M22 10h-3.5a3.5 3.5 0 1 0 0 7H22a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1Z" />
         <defs>
           <linearGradient id={gradA} x1="11" x2="11" y1="1.586" y2="17.414" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#00F0FF" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#081428" />
+            <stop stopColor="#F59E0B" stopOpacity="0.8" />
+            <stop offset="1" stopColor="#11141C" />
           </linearGradient>
           <linearGradient id={gradE} x1="22" x2="2" y1="13.5" y2="13.5" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#00F0FF" stopOpacity="0.6" />
+            <stop stopColor="#F59E0B" stopOpacity="0.6" />
             <stop offset="1" stopColor="#3B82F6" stopOpacity="0.4" />
           </linearGradient>
           <linearGradient id={gradF} x1="12" x2="12" y1="5" y2="14.845" gradientUnits="userSpaceOnUse">
