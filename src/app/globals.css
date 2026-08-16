@@ -799,3 +799,41 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
   }
 }
+
+/* ============================================================
+   BOUNCY ACCORDION & GLASS OPICS STYLES
+   ============================================================ */
+.bouncy-accordion-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.bouncy-item {
+  position: relative;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bouncy-item:hover {
+  background: rgba(13, 24, 48, 0.85) !important;
+  border-color: rgba(0, 240, 255, 0.28) !important;
+}
+
+.bouncy-item:active {
+  transform: scale(0.995);
+}
+
+.bouncy-item [data-glass="blur"] {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes spring-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 16px 2px rgba(0, 240, 255, 0.35);
+  }
+}
+

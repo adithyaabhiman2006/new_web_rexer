@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ShieldCheck, Play, Sparkles, Terminal as TermIcon, ExternalLink, Lock, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 import CyberTerminal from '@/components/ui/CyberTerminal'
+import SplitFlapText from '@/components/ui/SplitFlapText'
 
 export default function Hero() {
   return (
@@ -25,6 +26,78 @@ export default function Hero() {
             <h1 className="hero-headline">
               Engineering <span className="text-gradient-cyan">Fortified</span> Digital Empires.
             </h1>
+
+            {/* Live Mechanical Split-Flap Status Board */}
+            <div
+              style={{
+                margin: '1.25rem 0 1.5rem 0',
+                padding: '0.75rem 1.15rem',
+                background: 'rgba(4, 10, 22, 0.85)',
+                border: '1px solid rgba(0, 240, 255, 0.22)',
+                borderRadius: '12px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.05)',
+                display: 'inline-flex',
+                flexDirection: 'column',
+                gap: '0.45rem',
+                maxWidth: '100%',
+                backdropFilter: 'blur(12px)',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '1rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.68rem',
+                  color: 'var(--cyan-bright)',
+                  letterSpacing: '0.06em',
+                }}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span className="telemetry-dot" />
+                  MECHANICAL FLAP DEPARTURE STATUS
+                </span>
+                <span
+                  style={{
+                    color: 'var(--emerald-neon)',
+                    background: 'rgba(0, 255, 136, 0.12)',
+                    padding: '0.1rem 0.4rem',
+                    borderRadius: '4px',
+                    border: '1px solid rgba(0, 255, 136, 0.25)',
+                    fontSize: '0.62rem',
+                    fontWeight: 700,
+                  }}
+                >
+                  SOLARI MATRIX // ACTIVE
+                </span>
+              </div>
+
+              <div style={{ overflowX: 'auto', paddingBottom: '2px' }}>
+                <SplitFlapText
+                  words={[
+                    'LAUNCH READY',
+                    '0 CVE LOCKED',
+                    'FLUTTER 3.24',
+                    'SIGNAL LIVE ',
+                    'AES-256 GCM ',
+                    '120 FPS HFT ',
+                    'ENCLAVE INIT'
+                  ]}
+                  fontSize={24}
+                  tileRadius={6}
+                  gap={4}
+                  flipsPerChar={6}
+                  cycleDelay={2400}
+                  flipDuration={0.09}
+                  stagger={0.04}
+                  tileColor="#0a1428"
+                  textColor="#00f0ff"
+                  padTo={12}
+                />
+              </div>
+            </div>
 
             {/* Subtitle */}
             <p className="hero-description">

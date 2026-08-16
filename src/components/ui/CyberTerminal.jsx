@@ -1,6 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 import { Terminal, Shield, CheckCircle2, Play, Sparkles } from 'lucide-react'
+import SplitFlapText from '@/components/ui/SplitFlapText'
 
 const INITIAL_LOGS = [
   { type: 'dim', text: '[BOOT] Initializing REXER Imperial Cyber-Kernel v4.8...' },
@@ -105,6 +106,43 @@ export default function CyberTerminal() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.65rem', color: 'var(--emerald-neon)' }}>
           <span className="telemetry-dot" /> LIVE
         </div>
+      </div>
+
+      {/* Terminal Mechanical Flap Status Sub-header */}
+      <div
+        style={{
+          padding: '0.4rem 0.85rem',
+          background: 'rgba(2, 6, 14, 0.95)',
+          borderBottom: '1px solid var(--border-subtle)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '0.5rem',
+          overflowX: 'auto',
+        }}
+      >
+        <span style={{ fontSize: '0.62rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>
+          NODE TELEMETRY:
+        </span>
+        <SplitFlapText
+          words={[
+            'SYSTEM DEFENSE ARMED',
+            'ENCLAVE RUNNING 120FPS',
+            '0 ACTIVE BREACHES DETECTED',
+            'ECDSA SECP256K1 VERIFIED',
+            'CLAUDE v4.6 CODERABBIT OK'
+          ]}
+          fontSize={11}
+          gap={2}
+          tileRadius={3}
+          flipsPerChar={4}
+          cycleDelay={3200}
+          flipDuration={0.08}
+          stagger={0.03}
+          tileColor="#050c1a"
+          textColor="#00f0ff"
+          padTo={26}
+        />
       </div>
 
       <div className="terminal-body" ref={bodyRef}>

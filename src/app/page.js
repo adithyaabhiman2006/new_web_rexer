@@ -1,6 +1,7 @@
 import Hero from '@/components/home/Hero'
 import Ecosystem from '@/components/home/Ecosystem'
 import Services from '@/components/home/Services'
+import ArchitectureShowcase from '@/components/home/ArchitectureShowcase'
 import LiveScanner from '@/components/home/LiveScanner'
 import Portfolio from '@/components/home/Portfolio'
 import ProjectCalculator from '@/components/home/ProjectCalculator'
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <Ecosystem />
       <Services />
+      <ArchitectureShowcase />
       <LiveScanner />
       <Portfolio />
       <ProjectCalculator />

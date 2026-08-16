@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion'
 import { Check, Zap, Crown, Building2, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import BouncyAccordion from '@/components/ui/BouncyAccordion'
+import { AwardGlass, CalendarGlass, CartGlass, CodeEditorGlass } from '@/components/ui/GlassIcons'
 
 const PLANS = [
   {
@@ -148,6 +150,99 @@ export default function PricingPage() {
                 </motion.div>
               )
             })}
+          </div>
+
+          {/* Bouncy Accordion Pricing FAQ Section */}
+          <div style={{ marginTop: '5rem' }}>
+            <motion.div
+              className="section-header"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="section-eyebrow">
+                <Crown size={12} /> Commission FAQ & Protocols
+              </div>
+              <h2 className="section-title">
+                Frequently Asked <span className="text-gradient-cyan">Questions</span>
+              </h2>
+              <p className="section-subtitle">
+                Everything you need to know about our institutional commission process,
+                security-first SLA, and codebase ownership.
+              </p>
+            </motion.div>
+
+            <BouncyAccordion
+              items={[
+                {
+                  id: 'pricing-faq-payment',
+                  title: 'What payment terms & milestones do you support?',
+                  subtitle: '50/50 escrow split with milestone verification',
+                  icon: CartGlass,
+                  accent: 'var(--cyan-bright)',
+                  badge: 'BILLING',
+                  desc: 'Standard engagements are structured as 50% deposit upon kickoff and 50% upon final penetration testing verification and source repository handover. Enterprise retainer agreements are invoiced monthly via Stripe.',
+                  specs: [
+                    'Stripe invoicing (Credit Card, ACH, SEPA)',
+                    'Multi-sig crypto settlement available upon request',
+                    'Cryptographic receipt issued for every transaction',
+                  ],
+                  actionText: 'Commission a Tier',
+                  actionHref: '/contact',
+                },
+                {
+                  id: 'pricing-faq-security',
+                  title: 'Is cybersecurity auditing included in all tiers?',
+                  subtitle: 'Zero-CVE guarantee on every production release',
+                  icon: AwardGlass,
+                  accent: 'var(--amber-gold)',
+                  badge: 'SECURITY',
+                  desc: 'Yes. Even our Starter tier includes an automated AST security audit. The Professional and Enterprise tiers include full dynamic fuzzing, binary instrumentation, and CVSS v3.1 certified remediation.',
+                  specs: [
+                    'AST linting with CodeRabbit automated checks',
+                    'OWASP MASVS mobile security compliance',
+                    'Automated dependency supply-chain screening',
+                  ],
+                  actionText: 'Review Audit Standards',
+                  actionHref: '/about',
+                },
+                {
+                  id: 'pricing-faq-maintenance',
+                  title: 'What post-launch support and SLAs are included?',
+                  subtitle: '30 to 90 days guaranteed bug-fix and security patching',
+                  icon: CalendarGlass,
+                  accent: 'var(--emerald-neon)',
+                  badge: 'SUPPORT',
+                  desc: 'Every tier includes a warranty period covering performance optimizations, security patches, OS update compatibility (iOS/Android major versions), and direct engineer Telegram/Slack access.',
+                  specs: [
+                    'Sub-4 hour response time for critical incidents',
+                    'Automated uptime & error monitoring',
+                    'Dedicated Slack/Telegram channel with lead architect',
+                  ],
+                  actionText: 'Talk to Engineering',
+                  actionHref: '/contact',
+                },
+                {
+                  id: 'pricing-faq-source',
+                  title: 'Do we own 100% of the Flutter & Backend code?',
+                  subtitle: 'Full unencumbered intellectual property assignment',
+                  icon: CodeEditorGlass,
+                  accent: 'var(--blue-primary)',
+                  badge: 'IP RIGHTS',
+                  desc: 'Absolutely. All source repositories, design tokens, Figma assets, and CI/CD pipelines are owned completely by you with zero royalties or vendor lock-in.',
+                  specs: [
+                    'Direct GitHub organization repository transfer',
+                    'Signed Intellectual Property (IP) assignment contract',
+                    'Clean modular codebase ready for internal scaling',
+                  ],
+                  actionText: 'Commission Your Project',
+                  actionHref: '/contact',
+                },
+              ]}
+              defaultActive={0}
+              maxWidth="680px"
+            />
           </div>
         </div>
       </section>
