@@ -19,6 +19,8 @@ import SpotlightCard from '@/components/ui/SpotlightCard'
 import DecryptedText from '@/components/ui/DecryptedText'
 import ShinyText from '@/components/ui/ShinyText'
 import MagneticButton from '@/components/ui/MagneticButton'
+import LetterPullup from '@/components/ui/LetterPullup'
+import StarBorder from '@/components/ui/StarBorder'
 import { soundFx } from '@/components/ui/soundEffects'
 
 const CONTACT_INFO = [

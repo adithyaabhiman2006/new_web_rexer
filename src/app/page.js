@@ -10,6 +10,7 @@ import ProjectCalculator from '@/components/home/ProjectCalculator'
 import Testimonials from '@/components/home/Testimonials'
 import Stats from '@/components/home/Stats'
 import CTA from '@/components/home/CTA'
+import AuroraBackground from '@/components/ui/AuroraBackground'
 
 export default function Home() {
   return (
@@ -18,11 +19,13 @@ export default function Home() {
       <VelocityMarquee />
       <Ecosystem />
       <Services />
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <EnclaveVaultVisualizer />
-        </div>
-      </section>
+      <AuroraBackground>
+        <section className="section" style={{ paddingTop: 0 }}>
+          <div className="container">
+            <EnclaveVaultVisualizer />
+          </div>
+        </section>
+      </AuroraBackground>
       <ArchitectureShowcase />
       <LiveScanner />
       <Portfolio />

@@ -9,6 +9,8 @@ import SpotlightCard from '@/components/ui/SpotlightCard'
 import DecryptedText from '@/components/ui/DecryptedText'
 import ShinyText from '@/components/ui/ShinyText'
 import VelocityMarquee from '@/components/ui/VelocityMarquee'
+import LetterPullup from '@/components/ui/LetterPullup'
+import StarBorder from '@/components/ui/StarBorder'
 
 const TECH_STACK = [
   { icon: Smartphone, label: 'Flutter 3.24', color: 'var(--cyan-bright)' },

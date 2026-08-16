@@ -882,4 +882,122 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ============================================================
+   $10K EVOLUTION — PREMIUM CSS ADDITIONS
+   ============================================================ */
 
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background: rgba(0, 240, 255, 0.25);
+  color: #f0f4fc;
+}
+
+::-moz-selection {
+  background: rgba(0, 240, 255, 0.25);
+  color: #f0f4fc;
+}
+
+/* Focus-Visible Accessibility Ring */
+*:focus-visible {
+  outline: 2px solid var(--cyan-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Premium Thin Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.4);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 240, 255, 0.2) var(--bg-void);
+}
+
+/* ---- StarBorder Rotating Conic Gradient ---- */
+@keyframes star-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---- Floating 3D Shield Animation ---- */
+@keyframes float-shield {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.05); opacity: 0.8; }
+}
+
+/* ---- Scanline Sweep for Footer ---- */
+@keyframes scanline-sweep {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---- Pulse Glow for Active Nav Dot ---- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--cyan-bright), 0 0 16px var(--cyan-glow); }
+  50% { opacity: 0.6; box-shadow: 0 0 4px var(--cyan-bright), 0 0 8px var(--cyan-glow); }
+}
+
+/* ---- Premium Nav Link Gradient Underline ---- */
+.nav-link-premium {
+  position: relative;
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--grad-cyan-blue);
+  border-radius: 1px;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-premium:hover::after {
+  width: 100%;
+}
+
+/* ---- Desktop CTA visibility ---- */
+.nav-cta-desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .nav-cta-desktop {
+    display: block;
+  }
+}
+
+/* ---- Stats Grid Enhancement ---- */
+.stats-grid .stat-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+/* ---- Aurora Background container ---- */
+.aurora-bg {
+  background: transparent;
+}

@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { Smartphone, Target, LayoutDashboard, Lock, ShieldCheck, Zap, ArrowUpRight, CheckCircle2, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import SpotlightCard from '@/components/ui/SpotlightCard'
+import LetterPullup from '@/components/ui/LetterPullup'
+import StarBorder from '@/components/ui/StarBorder'
 
 const HIGH_TICKET_SERVICES = [
   {

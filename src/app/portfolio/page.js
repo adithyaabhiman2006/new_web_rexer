@@ -6,6 +6,8 @@ import Link from 'next/link'
 import SpotlightCard from '@/components/ui/SpotlightCard'
 import DecryptedText from '@/components/ui/DecryptedText'
 import ShinyText from '@/components/ui/ShinyText'
+import LetterPullup from '@/components/ui/LetterPullup'
+import StarBorder from '@/components/ui/StarBorder'
 
 const CATEGORIES = ['All', 'Mobile Enclave', 'Offensive Security', 'Trading UX']
 

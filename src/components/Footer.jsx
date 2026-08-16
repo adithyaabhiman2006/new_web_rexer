@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Youtube, Github, Twitter, Mail, Shield, ArrowUpRight, Lock, Terminal, Cpu } from 'lucide-react'
+import StarBorder from '@/components/ui/StarBorder'
 
 const CHANNELS = [
   { icon: Youtube, label: 'YouTube [60K+]', href: 'https://youtube.com/@RexerLK', handle: '@RexerLK' },
@@ -12,8 +13,21 @@ const CHANNELS = [
 
 export default function Footer() {
   return (
-    <footer id="site-footer" style={{ background: '#02040A', borderTop: '1px solid var(--border-medium)', position: 'relative' }}>
-      <div className="container" style={{ padding: '5rem 1.5rem 3rem' }}>
+    <footer id="site-footer" style={{ background: '#02040A', borderTop: '1px solid var(--border-medium)', position: 'relative', overflow: 'hidden' }}>
+      {/* Aurora strip at top of footer */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '180px',
+          background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 240, 255, 0.08) 0%, rgba(147, 51, 234, 0.05) 40%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      <div className="container" style={{ padding: '5rem 1.5rem 3rem', position: 'relative' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
@@ -57,9 +71,10 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease' }}
-                  onMouseOver={(e) => (e.currentTarget.style.color = 'var(--cyan-bright)')}
-                  onMouseOut={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                  className="footer-nav-link"
+                  style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease, transform 0.2s ease', display: 'inline-block' }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = 'var(--cyan-bright)'; e.currentTarget.style.transform = 'translateX(4px)' }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.transform = 'translateX(0)' }}
                 >
                   {link.label}
                 </Link>
@@ -67,15 +82,15 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Channels & Dispatch */}
+          {/* Social Channels with StarBorder */}
           <div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--amber-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.2rem' }}>
               // VERIFIED CHANNELS
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {CHANNELS.map(ch => {
+              {CHANNELS.map((ch, i) => {
                 const Icon = ch.icon
-                return (
+                const card = (
                   <a
                     key={ch.label}
                     href={ch.href}
@@ -86,13 +101,13 @@ export default function Footer() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       padding: '0.6rem 0.9rem',
-                      background: 'var(--bg-tertiary)',
-                      border: '1px solid var(--border-subtle)',
-                      borderRadius: 'var(--radius-sm)',
                       color: 'var(--text-pure)',
                       textDecoration: 'none',
                       fontSize: '0.82rem',
+                      transition: 'transform 0.2s ease',
                     }}
+                    onMouseOver={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
+                    onMouseOut={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                       <Icon size={16} style={{ color: 'var(--cyan-bright)' }} />
@@ -101,12 +116,34 @@ export default function Footer() {
                     <ArrowUpRight size={14} style={{ color: 'var(--text-muted)' }} />
                   </a>
                 )
+
+                // First channel (YouTube) gets StarBorder treatment
+                if (i === 0) {
+                  return (
+                    <StarBorder key={ch.label} color="#FFB800" speed="6s" radius="var(--radius-sm)">
+                      {card}
+                    </StarBorder>
+                  )
+                }
+
+                return (
+                  <div
+                    key={ch.label}
+                    style={{
+                      background: 'var(--bg-tertiary)',
+                      border: '1px solid var(--border-subtle)',
+                      borderRadius: 'var(--radius-sm)',
+                    }}
+                  >
+                    {card}
+                  </div>
+                )
               })}
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar with scanline */}
         <div style={{
           paddingTop: '2rem',
           borderTop: '1px solid var(--border-subtle)',
@@ -118,14 +155,28 @@ export default function Footer() {
           fontFamily: 'var(--font-mono)',
           fontSize: '0.72rem',
           color: 'var(--text-muted)',
+          position: 'relative',
         }}>
+          <div
+            className="footer-scanline"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '1px',
+              background: 'linear-gradient(90deg, transparent, var(--cyan-bright), transparent)',
+              animation: 'scanline-sweep 4s ease-in-out infinite',
+              opacity: 0.4,
+            }}
+          />
           <div>
             © {new Date().getFullYear()} REXER STUDIO. ALL RIGHTS RESERVED.
           </div>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <span>AUTONOMOUS ENGINE: CLAUDE 4.6</span>
             <span>REVIEW: CODERABBIT AI</span>
-            <span>HOSTING: VERCEL EDGE</span>
+            <span>HOSTING: GITHUB PAGES</span>
           </div>
         </div>
       </div>

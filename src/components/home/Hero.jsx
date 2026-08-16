@@ -1,12 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
-import { ArrowRight, ShieldCheck, Play, Sparkles, Terminal as TermIcon, ExternalLink, Lock, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Play, Sparkles, Lock, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 import CyberTerminal from '@/components/ui/CyberTerminal'
 import SplitFlapText from '@/components/ui/SplitFlapText'
 import DecryptedText from '@/components/ui/DecryptedText'
 import ShinyText from '@/components/ui/ShinyText'
 import MagneticButton from '@/components/ui/MagneticButton'
+import CountUp from '@/components/ui/CountUp'
+import TextPressure from '@/components/ui/TextPressure'
 
 export default function Hero() {
   return (
@@ -29,16 +31,24 @@ export default function Hero() {
               />
             </div>
 
-            {/* Kinetic Display Headline with ShinyText */}
-            <h1 className="hero-headline">
-              Engineering{' '}
-              <ShinyText
+            {/* Kinetic Display Headline with TextPressure */}
+            <h1 className="hero-headline" style={{ overflow: 'visible' }}>
+              <span style={{ display: 'block', marginBottom: '0.15em' }}>Engineering</span>
+              <TextPressure
                 text="Fortified"
-                color="#00f0ff"
-                shimmerColor="#ffffff"
-                speed={4}
+                className="hero-pressure-text"
+                fontFamily="var(--font-hero)"
+                minWeight={300}
+                maxWeight={900}
+                radius={250}
+                style={{
+                  background: 'linear-gradient(135deg, #00F0FF, #3B82F6, #9333EA)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
               />{' '}
-              Digital Empires.
+              <span style={{ display: 'inline' }}>Digital Empires.</span>
             </h1>
 
             {/* Live Mechanical Split-Flap Status Board */}
@@ -150,7 +160,7 @@ export default function Hero() {
               </MagneticButton>
             </div>
 
-            {/* Authority stats ticker */}
+            {/* Animated CountUp Stats */}
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -160,7 +170,7 @@ export default function Hero() {
             }}>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 800, color: 'var(--cyan-bright)' }}>
-                  60K+
+                  <CountUp end={60} suffix="K+" duration={2200} />
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
                   YOUTUBE SUBSCRIBERS
@@ -168,7 +178,7 @@ export default function Hero() {
               </div>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 800, color: 'var(--emerald-neon)' }}>
-                  $120M+
+                  $<CountUp end={120} suffix="M+" duration={2500} />
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
                   TRANSACTION VOLUME SECURED
@@ -176,7 +186,7 @@ export default function Hero() {
               </div>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 800, color: 'var(--amber-gold)' }}>
-                  0 CVE
+                  <CountUp end={0} duration={800} /> CVE
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
                   UNRESOLVED VULNERABILITIES
@@ -185,13 +195,32 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Live Interactive Cyber Terminal */}
+          {/* Right Column: Live Interactive Cyber Terminal + 3D Shield */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
+            style={{ position: 'relative' }}
           >
-            <CyberTerminal />
+            {/* Floating 3D CSS Shield behind terminal */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-40px',
+                right: '-30px',
+                width: '160px',
+                height: '160px',
+                background: 'conic-gradient(from 180deg, rgba(0, 240, 255, 0.15), rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.15), rgba(0, 240, 255, 0.15))',
+                borderRadius: '50%',
+                filter: 'blur(40px)',
+                animation: 'float-shield 6s ease-in-out infinite',
+                pointerEvents: 'none',
+                zIndex: 0,
+              }}
+            />
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <CyberTerminal />
+            </div>
           </motion.div>
         </div>
       </div>

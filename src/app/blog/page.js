@@ -7,6 +7,8 @@ import { useState } from 'react'
 import SpotlightCard from '@/components/ui/SpotlightCard'
 import DecryptedText from '@/components/ui/DecryptedText'
 import ShinyText from '@/components/ui/ShinyText'
+import LetterPullup from '@/components/ui/LetterPullup'
+import StarBorder from '@/components/ui/StarBorder'
 
 export default function BlogPage() {
   const posts = getAllPosts()
